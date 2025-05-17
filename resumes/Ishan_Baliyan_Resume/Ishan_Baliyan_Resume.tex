@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.25in,top=1.25in,right=0.5in,bottom=0.6in]{geometry} 
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{lato}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+\usepackage{xcolor}
+\definecolor{bookColor}{rgb}{0.15, 0.15, 0.15}
+\color{bookColor}
+
+\definecolor{blacklight}{rgb}{0.15, 0.15, 0.15}
+
+\newcommand\boldblack[1]{\textcolor{black}{\textbf{#1}}}
+\newcommand\boldblacklight[1]{\textcolor{blacklight}{\textbf{#1}}}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-0.2in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.9in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+\definecolor{bittersweet}{rgb}{1, 0.6, 0}
+\definecolor{lavendermagenta}{rgb}{0.93, 0.51, 0.93}
+\definecolor{duolingo}{rgb}{0.207843137, 0.57254902, 0.870588235}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \boldblack{#1} & \boldblack{\small #2} \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingA}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \boldblack{#1} & \boldblack{\small #2}
+    \end{tabular*}\vspace{0pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \boldblack{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Ishan Baliyan} \\ \vspace{10pt} \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +1(613) 400-8268 ~ \href{mailto:ishanbaliyan@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ ishan.baliyan@uwaterloo.ca} ~ 
+    \href{https://www.linkedin.com/in/ishan-baliyan/}{\raisebox{-0.2\height}\faLinkedin\ linkedin.com/in/ishan-baliyan}  ~
+    \href{https://github.com/IshanBaliyan}{\raisebox{-0.2\height}\faGithub\ github.com/IshanBaliyan}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}\hspace{10pt}{Go · Python · Java · C++ · Ruby · SQL · JavaScript/TypeScript} \\\vspace{1pt}
+     \textbf{Tools}\hspace{10pt}{Docker · Kubernetes · AWS (EC2, S3) · GCP · Redis · Linux · Git} \\ \vspace{1pt}
+     \textbf{Frameworks}\hspace{10pt}{REST APIs · gRPC · Microservices · Distributed Systems · CI/CD · Multi-threading} \\
+    }}
+ \end{itemize}
+  \vspace{-15pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Sep. 2021 -- Apr. 2026}
+      {Candidate for Bachelor of Computer Science · GPA: 3.9/4.0}{Waterloo, ON}
+      \resumeItemListStart
+        \resumeItem{\textbf{Competitive Programming}: Top 1\% on Leetcode Competitions out of 30,000 participants (2023, 2024)}
+        \resumeItem{\textbf{Publications}: Co-author of 2 peer-reviewed publications in Databases and Distributed Systems at University of Waterloo}
+        \resumeItem{\textbf{Coursework}: Algorithms, Data Structures, Operating Systems, Distributed Systems, Database Systems, Cloud Computing}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+\vspace{2pt}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+        {Twitter (xAI)}{Apr. -- Sep. 2025}
+      {Software Engineering Intern}{San Francisco, CA} 
+      \resumeItemListStart
+        \resumeItem{Designed scalable backend services in Go and Python, powering high-throughput user-facing data APIs.}
+        \resumeItem{Led end-to-end development of backend tools for AI-powered ads (with Grok xAI integration) and feed latency by 40\%.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+        {PlayStation}{Sep. -- Dec. 2024}
+      {Software Engineering Intern}{Chicago, IL} 
+      \resumeItemListStart
+        \resumeItem{Built cloud-native microservices in Go and Java to support real-time game telemetry pipelines.}
+        \resumeItem{Integrated gRPC-based infrastructure into the existing distributed system, reducing network overhead.}
+        \resumeItem{Deployed and monitored containerized services via Kubernetes and Docker across AWS environments.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+        {Kinaxis}{Sep. 2023 -- Apr. 2024}
+      {Software Engineering Intern}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Developed and tested distributed backend tools in Python and C++ for supply chain optimization workflows.}
+        \resumeItem{Created internal infrastructure tooling using Go and SQL, reducing pipeline failures by 35\%.}
+        \resumeItem{Maintained cloud services on GCP with Docker and CI/CD automation for seamless code deployments.}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+        {Atolio}{May. 2022 -- Jan. 2023}
+      {Software Engineering Intern}{San Francisco, CA}
+      \resumeItemListStart
+        \resumeItem{Engineered core backend logic in Ruby and Python, enabling scalable internal search and data ingestion systems.}
+        \resumeItem{Improved request throughput by 50\% by redesigning queueing mechanisms using Go and Redis.}
+        \resumeItem{Supported migration of on-prem services to Kubernetes clusters on GCP using Helm and Docker.}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+        {MVS Systems}{Jun. -- Aug. 2021}
+      {Software Engineering Intern}{Toronto, ON} 
+      \resumeItemListStart
+        \resumeItem{Built backend REST APIs in Java and SQL to serve a customer-facing analytics dashboard.}
+        \resumeItem{Optimized multi-threaded processing workflows for real-time alerts with C++, reducing lag by 20\%.}
+        \resumeItem{Configured CI/CD pipelines and logging infrastructure with Docker and Linux for production reliability.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+
+
+
+
+%-----------PROJECTS-----------
+\section{Relevant Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+              \resumeProjectHeading
+  {\href{https://apps.apple.com/ca/app/resume-builder-ai-cv-maker/id6463698204?platform=iphone}{\faLink}
+  % \hspace{3pt}\href{https://apps.apple.com/ca/app/resume-builder-ai-cv-maker/id6463698204?platform=iphone}{\faApple}
+  \hspace{0.5pt}
+  \textbf{iOS Resume Builder} $|$ \emph{CockroachDB, Swift, OpenAI GPT-4, PostgreSQL, RevenueCat SDK}}{}
+  \resumeItemListStart
+    \resumeItem {Created a Resume Builder app on \href{https://apps.apple.com/ca/app/ai-resume-writer/id6463698204}{\textbf {\color{Blue}{App Store}}} and \href{https://play.google.com/store/apps/details?id=com.wloo.airesume}{\textbf {\color{Blue}{Google Play}}}, resulting in \textbf{50,000+ downloads} and \textbf{\$7,500 revenue}.}
+\resumeItem {Engineered 18+ user-facing features and 15+ A/B tests for increasing user-engagement and session time by 40\% .}
+
+\resumeItem {Architected end-to-end ETL pipeline architecture, processing over 100,000 events in Firebase and OpenAI API.}
+\resumeItem {Designed Python data visualization tools integrated with Firebase Analytics to track user behavior across 15+ key features.}
+\resumeItem {Achieved 20\% month‑over‑month user growth, 200+ Five‑Star reviews, and 50,000 downloads across 124+ countries.}
+
+    \vspace{-13pt}
+  \resumeItemListEnd
+  
+\resumeProjectHeading
+  {\href{https://drive.google.com/file/d/1uOlu_Y2957nIkzlAQWT-5PlczictrROY/view?usp=sharing}{\faLink}
+  \hspace{0.5pt}
+  \textbf{Phone Automation for Restaurants} \href{https://drive.google.com/file/d/1uOlu_Y2957nIkzlAQWT-5PlczictrROY/view?usp=sharing}{(video demo)} $|$ \emph{Python, Twilio, Javascript, OpenAI GPT-4, MySQL, Square API}}{}
+  \resumeItemListStart
+   \resumeItem{Designed an AI phone assistant, "Talk \& Order," to automate phone calls at restaurants in Waterloo, no human staff needed.}
+    \resumeItem{Built a Twilio system that manages real-time, concurrent calls, ensuring restaurants never miss an order during peak hours.}
+    \resumeItem{Deployed the solution in three pilot restaurants in Waterloo, generating potential savings of \$4,000 in monthly revenue.}
+        \vspace{-13pt}
+  \resumeItemListEnd
+    
+\end{document}
+
