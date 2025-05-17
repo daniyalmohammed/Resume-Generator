@@ -2,95 +2,74 @@ from typing import Any
 import httpx
 import os
 import pathlib
+import subprocess
+import platform
 from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
 mcp = FastMCP("resume-generator")
 
-# Constants
-NWS_API_BASE = "https://api.weather.gov"
-USER_AGENT = "weather-app/1.0"
+def generate_pdf(tex_path: pathlib.Path) -> tuple[bool, str]:
+    """
+    Generate a PDF from a LaTeX file and open it on macOS.
     
-async def make_nws_request(url: str) -> dict[str, Any] | None:
-    """Make a request to the NWS API with proper error handling."""
-    headers = {
-        "User-Agent": USER_AGENT,
-        "Accept": "application/geo+json"
-    }
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.get(url, headers=headers, timeout=30.0)
-            response.raise_for_status()
-            return response.json()
-        except Exception:
-            return None
-
-def format_alert(feature: dict) -> str:
-    """Format an alert feature into a readable string."""
-    props = feature["properties"]
-    return f"""
-Event: {props.get('event', 'Unknown')}
-Area: {props.get('areaDesc', 'Unknown')}
-Severity: {props.get('severity', 'Unknown')}
-Description: {props.get('description', 'No description available')}
-Instructions: {props.get('instruction', 'No specific instructions provided')}
-"""
-
-@mcp.tool()
-async def get_alerts(state: str) -> str:
-    """Get weather alerts for a US state.
-
     Args:
-        state: Two-letter US state code (e.g. CA, NY)
+        tex_path: Path to the LaTeX file
+        
+    Returns:
+        Tuple of (success, message)
     """
-    url = f"{NWS_API_BASE}/alerts/active/area/{state}"
-    data = await make_nws_request(url)
-
-    if not data or "features" not in data:
-        return "Unable to fetch alerts or no alerts found."
-
-    if not data["features"]:
-        return "No active alerts for this state."
-
-    alerts = [format_alert(feature) for feature in data["features"]]
-    return "\n---\n".join(alerts)
-
-@mcp.tool()
-async def get_forecast(latitude: float, longitude: float) -> str:
-    """Get weather forecast for a location.
-
-    Args:
-        latitude: Latitude of the location
-        longitude: Longitude of the location
-    """
-    # First get the forecast grid endpoint
-    points_url = f"{NWS_API_BASE}/points/{latitude},{longitude}"
-    points_data = await make_nws_request(points_url)
-
-    if not points_data:
-        return "Unable to fetch forecast data for this location."
-
-    # Get the forecast URL from the points response
-    forecast_url = points_data["properties"]["forecast"]
-    forecast_data = await make_nws_request(forecast_url)
-
-    if not forecast_data:
-        return "Unable to fetch detailed forecast."
-
-    # Format the periods into a readable forecast
-    periods = forecast_data["properties"]["periods"]
-    forecasts = []
-    for period in periods[:5]:  # Only show next 5 periods
-        forecast = f"""
-{period['name']}:
-Temperature: {period['temperature']}°{period['temperatureUnit']}
-Wind: {period['windSpeed']} {period['windDirection']}
-Forecast: {period['detailedForecast']}
-"""
-        forecasts.append(forecast)
-
-    return "\n---\n".join(forecasts)
-
+    if not tex_path.exists():
+        return False, f"LaTeX file not found at {tex_path}"
+    
+    # Get the directory and filename
+    tex_dir = tex_path.parent
+    
+    try:
+        # Run pdflatex twice to ensure all references are resolved
+        for i in range(2):
+            result = subprocess.run(
+                ["pdflatex", "-interaction=nonstopmode", tex_path.name],
+                cwd=tex_dir,
+                capture_output=True,
+                text=True,
+                check=False  # Don't raise exception on non-zero exit
+            )
+            
+            # Check if there were fatal errors in the output
+            if "Fatal error occurred" in result.stdout or "Fatal error occurred" in result.stderr:
+                # Check if the log file exists to get more detailed error information
+                log_path = tex_path.with_suffix(".log")
+                error_msg = result.stderr
+                if log_path.exists():
+                    try:
+                        with open(log_path, "r") as log_file:
+                            log_content = log_file.read()
+                            # Extract the error message - look for lines with "!" prefix
+                            error_lines = [line for line in log_content.split('\n') if line.startswith('!')]
+                            if error_lines:
+                                error_msg = '\n'.join(error_lines)
+                    except Exception:
+                        pass  # If we can't read the log file, continue with the original error
+                
+                return False, f"Failed to generate PDF. Error: {error_msg}"
+        
+        # Check if the PDF was created
+        pdf_path = tex_path.with_suffix(".pdf")
+        if not pdf_path.exists():
+            return False, f"Failed to generate PDF. Check {tex_path.with_suffix('.log')} for errors."
+        
+        # Open the PDF file on macOS
+        if platform.system() == "Darwin":  # macOS
+            try:
+                subprocess.run(["open", pdf_path], check=False)
+            except Exception as e:
+                return True, f"PDF generated at {pdf_path}, but failed to open automatically: {str(e)}"
+                
+        return True, f"PDF generated successfully at {pdf_path}"
+        
+    except Exception as e:
+        return False, f"Error generating PDF: {str(e)}"
 
 @mcp.tool()
 async def get_resume(name: str) -> str:
@@ -188,6 +167,109 @@ async def list_resumes() -> str:
             return "No resume files found in the resumes directory."
     
     return "Available resumes:\n" + "\n".join(resume_list)
+
+
+@mcp.tool()
+async def write_resume(name: str, content: str, overwrite: bool = True) -> str:
+    """Write or replace content of a resume file.
+    
+    Args:
+        name: Name of the person in Firstname_Lastname format (e.g. John_Doe)
+        content: LaTeX content to write to the resume file
+        overwrite: Whether to overwrite existing file (default: True)
+    """
+    # Validate input
+    if not name or not content:
+        return "Error: Name and content cannot be empty"
+    
+    # Check for invalid filesystem characters in name
+    invalid_chars = ['/', '\\', ':', '*', '?', '"', '<', '>', '|']
+    if any(char in name for char in invalid_chars):
+        return f"Error: Name contains invalid characters. Avoid: {' '.join(invalid_chars)}"
+    
+    # Basic content validation - check if it looks like LaTeX
+    if not content.strip() or '\\documentclass' not in content:
+        return "Error: Content does not appear to be valid LaTeX (missing \\documentclass)"
+    
+    # Ensure resumes directory exists
+    resume_dir = pathlib.Path("resumes")
+    try:
+        if not resume_dir.exists():
+            os.makedirs(resume_dir, exist_ok=True)
+    except PermissionError:
+        return "Error: Permission denied when creating resumes directory"
+    except Exception as e:
+        return f"Error creating resumes directory: {str(e)}"
+    
+    # Create or ensure directory for this person exists
+    person_dir = resume_dir / f"{name}_Resume"
+    try:
+        if not person_dir.exists():
+            os.makedirs(person_dir, exist_ok=True)
+    except PermissionError:
+        return f"Error: Permission denied when creating directory for {name}"
+    except Exception as e:
+        return f"Error creating directory for {name}: {str(e)}"
+    
+    # Set the resume file path
+    resume_path = person_dir / f"{name}_Resume.tex"
+    
+    # If the resume doesn't exist but we have other naming patterns, let's check those first
+    if not resume_path.exists():
+        # Check if there's an existing file with a different naming convention
+        possible_locations = [
+            # Check for hyphenated naming
+            person_dir / f"{name.replace('_', '-')}-Resume.tex",
+            # Check for other variations
+            person_dir / f"*resume*.tex"
+        ]
+        
+        for pattern in possible_locations:
+            if '*' in str(pattern):
+                # Handle glob patterns
+                matches = list(pattern.parent.glob(pattern.name))
+                if matches:
+                    resume_path = matches[0]
+                    break
+            elif pattern.exists():
+                resume_path = pattern
+                break
+    
+    # Check if file exists and handle overwrite flag
+    if resume_path.exists() and not overwrite:
+        return f"File already exists at {resume_path} and overwrite is set to False"
+    
+    # Create backup if file exists
+    if resume_path.exists():
+        try:
+            backup_path = resume_path.with_suffix(".tex.bak")
+            import shutil
+            shutil.copy2(resume_path, backup_path)
+        except Exception as e:
+            return f"Warning: Could not create backup before overwriting: {str(e)}"
+    
+    # Write the content to the file
+    try:
+        with open(resume_path, "w") as file:
+            file.write(content)
+            
+        # Verify file was written successfully
+        if not resume_path.exists() or resume_path.stat().st_size == 0:
+            return f"Error: File appears to be empty or not written correctly at {resume_path}"
+        
+        # Generate PDF and open it
+        pdf_success, pdf_message = generate_pdf(resume_path)
+        
+        if pdf_success:
+            return f"Successfully wrote resume for {name} to {resume_path}. {pdf_message}"
+        else:
+            return f"Successfully wrote resume for {name} to {resume_path}, but PDF generation failed: {pdf_message}"
+    except PermissionError:
+        return f"Error: Permission denied when writing to {resume_path}"
+    except IOError as e:
+        return f"Error writing resume file (IO error): {str(e)}"
+    except Exception as e:
+        return f"Error writing resume file: {str(e)}"
 
 
 if __name__ == "__main__":

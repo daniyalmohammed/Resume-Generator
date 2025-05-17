@@ -148,9 +148,9 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.0in, label={}]
     \small{\item{
-       {\textbf{Languages}}{: C++, Python, Golang, Java, JavaScript, TypeScript, C, SQL } \\
-     {\textbf{Frameworks/Libraries}}{: React, TensorFlow, PyTorch, GDAL, GraphQL, Node.js, PostGIS } \\
-     {\textbf{Infrastructure}}{: AWS (Lambda, S3, DynamoDB), Kubernetes, Docker, PostgreSQL, Redis, GCP, Distributed Systems} \\
+       {\textbf{Languages}}{: Python, Go, Java, C, C++ Ruby, JavaScript, TypeScript, HTML, CSS, SQL } \\
+     {\textbf{Frameworks/Libraries}}{: Ruby on Rails, Redux, Material UI, GraphQL, Node.js, React } \\
+     {\textbf{Infrastructure}}{: AWS (Lambda, S3, DynamoDB), Kubernetes, Git, Docker, PostgreSQL, Redis, Jenkins} \\
     }}
  \end{itemize}
   \vspace{-15pt}
@@ -166,64 +166,64 @@
   \resumeSubheading
     {{BitGo}}
     {May 2025 -- August 2025}
-    {{Staff Software Engineer}}{Boston, MA}
+    {{Software Engineer Intern}}{Boston, MA}
     \resumeItemListStart
-          \resumeItem{Developing large-scale navigation platform with \textbf{C++}, \textbf{Golang} and \textbf{Kafka} to process geospatial data from \textbf{200,000+} sources and optimize routing algorithms for real-time path planning and navigation}
+          \resumeItem{Developing customer platform infrastructure with \textbf{Java}, \textbf{DropWizard} and \textbf{Kafka} to streamline CRM workflows for \textbf{200,000+} businesses and enhance engagement with millions of customers worldwide }
 
     \resumeItemListEnd
 
 \resumeSubheading
     {{1851 Labs}}
     {Sept 2024 -- Dec 2024}
-    {{Staff Software Engineer}}{Toronto, ON}
+    {{Software Engineer Intern}}{Toronto, ON}
     \resumeItemListStart
-        \resumeItem{Built high-performance mapping visualization system with \textbf{C++}, \textbf{React}, \textbf{WebGL}, and \textbf{AWS}, serving \textbf{10,000} DAUs with real-time geospatial data rendering}
-          \resumeItem{Engineered and implemented route optimization algorithms using \textbf{Python} and \textbf{PostGIS}, enabling intelligent path planning and \textbf{10x} performance improvements}
-              \resumeItem{Refactored map data processing pipeline using \textbf{Golang}, \textbf{Flask}, and \textbf{AWS Lambda}, improving system
-capacity by \textbf{10\%} and reducing latency for real-time navigation updates}
+        \resumeItem{Built login and channels pages for a B2C AI art platform with \textbf{TypeScript}, \textbf{React}, \textbf{Next.js}, and \textbf{AWS}, serving \textbf{10,000} DAUs}
+          \resumeItem{Engineered and A/B tested onboarding features using \textbf{Convex} and \textbf{Material UI}, enabling fast iterations and \textbf{10x} user growth}
+              \resumeItem{Refactored AI model inference and image generation services using, \textbf{Flask}, and \textbf{AWS Lambda}, improving system
+capacity by \textbf{10\%} and reducing latency during peak image creation periods}
          
     \resumeItemListEnd
 
 \resumeSubheading
     {{Regional Municipality of York}}
     {Jan 2024 -- Apr 2024}
-    {{Staff Software Engineer}}{Newmarket, ON}
+    {{Software Engineer Intern}}{Newmarket, ON}
           \resumeItemListStart
-          \resumeItem{Spearheaded a geospatial data processing system for\textbf{ 2,000+} employees using \textbf{Python}, \textbf{C++}, and
-\textbf{React}, analyzing and visualizing location data from 300+ sources, improving navigation accuracy by \textbf{30\%}}
+          \resumeItem{Spearheaded a microservices-based internal platform tool for\textbf{ 2,000+} employees using \textbf{Python}, \textbf{FastAPI}, and
+\textbf{React}, managing, organizing and monitoring 300+ third-party applications, improving operational efficiency by \textbf{30\%}}
       
 
-      \resumeItem{Structured and normalized geospatial data schemas in \textbf{PostgreSQL} with \textbf{PostGIS} to enforce data integrity and optimize spatial queries}
-      \resumeItem{Implemented a \textbf{CI/CD} pipeline using \textbf{GitHub Actions}, automating testing of mapping algorithms and improving efficiency through \textbf{30\%}}
+      \resumeItem{Structured and normalized data schemas in \textbf{PostgreSQL} to enforce data integrity and simplify downstream integrations}
+      \resumeItem{Implemented a \textbf{CI/CD} pipeline using \textbf{GitHub Actions}, automating deployment processes through \textbf{30\%}}
     \resumeItemListEnd
 
 \resumeSubheading
     {{DOZR}}
     {May 2023 -- Aug 2023}
-    {{Staff Software Engineer}}{Kitchener, ON}
+    {{Software Engineer Intern}}{Kitchener, ON}
     \resumeItemListStart
-         \resumeItem{Spearheaded a fleet location tracking system with \textbf{C++, Python, and AWS}, enabling real-time equipment location monitoring and optimizing routes by \textbf{50\%}.}
-      \resumeItem{Optimized geospatial database queries using \textbf{PostgreSQL indexing and Redis}, reducing routing algorithm execution time from \textbf{2.1s to 400ms}.}
-      \resumeItem{Automated\textbf{ CI/CD} with \textbf{GitHub Actions} and \textbf{Kubernetes}, ensuring continuous integration of mapping features and cutting deployment time from \textbf{30 to 5 minutes}.}
+         \resumeItem{Spearheaded a rental system with \textbf{Django, TypeScript, and AWS}, increasing construction equipment bookings by \textbf{50\%}.}
+      \resumeItem{Optimized database queries using \textbf{PostgreSQL indexing and Redis}, reducing execution time from \textbf{2.1s to 400ms}.}
+      \resumeItem{ Automated\textbf{ CI/CD} with \textbf{GitHub Actions} and \textbf{Kubernetes}, cutting deployment time from \textbf{30 to 5 minutes}.}
     \resumeItemListEnd
 
 \resumeSubheading
     {{Avolta}}
     {Sep 2022 -- Apr 2023}
-    {{Staff Software Engineer}}{Toronto, ON}
+    {{Software Engineer Intern}}{Toronto, ON}
     \resumeItemListStart
-            \resumeItem{Built a \textbf{React Native} mobile navigation app using \textbf{C++} backend for real-time vehicle location tracking with \textbf{GCP} for notifications, achieving \textbf{95\%} user engagement}
-      \resumeItem{Implemented routing optimization algorithms with \textbf{Golang}, reducing request latency by \textbf{60\%} and enabling \textbf{2M+ route calculations/month}.}
-  \resumeItem{Developed a \textbf{React dashboard} with map visualization for monitoring vehicle status and routes, streamlining user interactions and reducing UI latency by \textbf{50\%}.}
+            \resumeItem{Built a \textbf{React Native} mobile app to show vehicle location data using \textbf{GCP} for notifications, getting \textbf{95\%} user engagement}
+      \resumeItem{Integrated third-party \textbf{RESTful} APIs with \textbf{Flask}, reducing request latency by \textbf{60\%} and enabling \textbf{2M+ transactions/month}.}
+  \resumeItem{Developed a \textbf{React dashboard} for monitoring vehicle status, streamlining user interactions and reducing UI latency by \textbf{50\%}.}
 
     \resumeItemListEnd
 
 
       \resumeSubheading
        {\textbf{Waterloop - Design Team} }{May 2022 {--} Aug 2022}
-      {{{Staff Software Engineer}}}{Waterloo, ON}
+      {{{Software Engineering Team Lead}}}{Waterloo, ON}
      \resumeItemListStart
-        \resumeItem{Led the development of a geospatial data processing system for \textbf{550+ transportation routes} using \textbf{Python} and \textbf{C++}, implementing high-performance pathfinding algorithms, and improving route optimization by \textbf{40\%}.  
+        \resumeItem{Led the development of an internal applicant tracking system for \textbf{550+ applicants} using \textbf{Ruby on Rails} and integrated \textbf{1Password} for secure credential management, improving access control and reducing unauthorized access incidents by \textbf{40\%}.  
 
 
 
@@ -237,9 +237,9 @@ capacity by \textbf{10\%} and reducing latency for real-time navigation updates}
     
  \resumeSubheading
        {{Manulife - Waterloo Experience Accelerate} }{May 2022 {--} Aug 2022}
-      {{{ Staff Software Engineer}}}{Waterloo, ON}
+      {{{ Software Engineering Team Lead}}}{Waterloo, ON}
      \resumeItemListStart
-        \resumeItem{Led a team of \textbf{4} developers to build a location-based application using \textbf{React.js} and implemented backend routing algorithms with \textbf{Python} and \textbf{Express.js}, creating an efficient navigation system that optimized travel paths by \textbf{35\%}}
+        \resumeItem{Led a team of \textbf{4} student developers to revamp a tutoring website's UI using \textbf{React.js} and built a payment system with early bird and bundle discounts using \textbf{Stripe} and \textbf{Express.js}, delivering a fully functional prototype in \textbf{3} months}
 
       \resumeItemListEnd
 
@@ -252,17 +252,17 @@ capacity by \textbf{10\%} and reducing latency for real-time navigation updates}
     \resumeSubHeadingListStart
       
     \resumeProjectHeading
-          { {{\href{https://github.com/jal2003/InformaGenie}{\textbf{NavigationAI}} {\faGithub}}} $|$ \emph{C++, Python, TensorFlow, Geospatial Algorithms, Maps API}}{}
+          { {{\href{https://github.com/jal2003/InformaGenie}{\textbf{InformaGenie}} {\faGithub}}} $|$ \emph{Python, Ollama, LangChain, Streamlit, RAG, LLM}}{}
           \resumeItemListStart
-            \resumeItem{Developed an intelligent navigation system using \textbf{C++, Python, and TensorFlow} for dynamic route optimization serving \textbf{50+ users}}
+            \resumeItem{Developed a secure AI-powered web scraper agent using \textbf{Python, LangChain, and RAG} serving \textbf{50+ users}}
                 \vspace{-15pt}
 
           \resumeItemListEnd
           
     \resumeProjectHeading
-          { {{\href{https://github.com/jal2003/InvisiCut}{\textbf{MapOptimizer}} {\faGithub}}} $|$ \emph{Golang, Python, PostGIS, Routing Algorithms}}{}
+          { {{\href{https://github.com/jal2003/InvisiCut}{\textbf{InvisiCut}} {\faGithub}}} $|$ \emph{Python, Streamlit, rembg, PIL}}{}
           \resumeItemListStart
-            \resumeItem{Created a geospatial data optimization tool that processes and enhances mapping data for improved routing and navigation for \textbf{200+} users }
+            \resumeItem{Developed a free web-based tool that uses AI to remove image backgrounds instantly for \textbf{200+} users }
                 \vspace{-5pt}
           \resumeItemListEnd
 
@@ -275,7 +275,7 @@ capacity by \textbf{10\%} and reducing latency for real-time navigation updates}
       {University of Waterloo}{Sep. 2021 -- Apr. 2026}
       {Candidate for Bachelor of Mathematics, Computational Mathematics}{Waterloo, ON}
     \resumeItemListStart
-        \resumeItem{\textbf{Coursework}: Algorithms, Data Structures, Distributed Systems, Cloud Computing, Geospatial Analysis, Machine Learning}
+        \resumeItem{\textbf{Coursework}: Algorithms, Data Structures, Database Systems, Cloud Computing, Object-Oriented, Distributed Systems}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 \end{document}

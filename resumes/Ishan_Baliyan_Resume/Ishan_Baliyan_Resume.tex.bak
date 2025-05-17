@@ -148,9 +148,9 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}\hspace{10pt}{C++ · Python · Golang · Java · Scala · JavaScript/TypeScript · SQL} \\\vspace{1pt}
-     \textbf{Tools}\hspace{10pt}{AWS · Docker · Kubernetes · Linux · OpenStreetMap · MapBox · Google Maps API · Git} \\ \vspace{1pt}
-     \textbf{Frameworks}\hspace{10pt}{Distributed Systems · Spatial Algorithms · Route Optimization · Fleet Data Analysis · High-Performance Computing} \\
+     \textbf{Languages}\hspace{10pt}{C++ · Java · Python · JavaScript/TypeScript · SQL · HTML/CSS · Swift} \\\vspace{1pt}
+     \textbf{Tools}\hspace{10pt}{GIS · OpenStreetMap · MapBox · Google Maps API · AWS · Docker · Kubernetes · Linux} \\ \vspace{1pt}
+     \textbf{Frameworks}\hspace{10pt}{Spatial Algorithms · 3D Rendering · Distributed Systems · Route Optimization · UI/UX · CI/CD} \\
     }}
  \end{itemize}
   \vspace{-15pt}
@@ -174,46 +174,46 @@
   \resumeSubHeadingListStart
   \resumeSubheading
         {Twitter (xAI)}{Apr. -- Sep. 2025}
-      {Staff Software Engineer, Navigation Systems}{San Francisco, CA} 
+      {Staff Software Engineer, Geospatial Systems}{San Francisco, CA} 
       \resumeItemListStart
-        \resumeItem{Developed high-performance navigation algorithms in C++ and Python, powering autonomous routing services for millions of users.}
-        \resumeItem{Led implementation of fleet data analysis pipeline that improved route optimization by 65\% using distributed computing.}
+        \resumeItem{Architected location-based services using C++ and Java, powering real-time geospatial analytics for millions of users.}
+        \resumeItem{Led development of high-performance spatial indexing algorithms, improving query performance by 60\% at scale.}
       \resumeItemListEnd
       
     \resumeSubheading
         {PlayStation}{Sep. -- Dec. 2024}
-      {Staff Software Engineer, Maps & Routing}{Chicago, IL} 
+      {Staff Software Engineer, Navigation Systems}{Chicago, IL} 
       \resumeItemListStart
-        \resumeItem{Designed and implemented scalable mapping services in C++ and Golang that processed terabytes of geospatial data daily.}
-        \resumeItem{Built next-generation routing algorithms that improved ETA prediction accuracy by 40\% using live traffic data integration.}
-        \resumeItem{Collaborated with cross-functional teams to develop client-server navigation architecture serving millions of concurrent users.}
+        \resumeItem{Developed real-time 3D navigation rendering engine in C++ and OpenGL, enabling seamless in-game map experiences.}
+        \resumeItem{Engineered efficient pathfinding algorithms that reduced route calculation time by 45\% in complex virtual environments.}
+        \resumeItem{Implemented cross-platform mapping services with Java and Python, supporting millions of concurrent users.}
       \resumeItemListEnd
 
     \resumeSubheading
         {Kinaxis}{Sep. 2023 -- Apr. 2024}
-      {Senior Software Engineer, Navigation Systems}{Toronto, ON}
+      {Senior Software Engineer, Maps & Routing}{Toronto, ON}
       \resumeItemListStart
-        \resumeItem{Architected backend routing optimization services in Java and C++ that reduced computational overhead by 50\% at scale.}
-        \resumeItem{Developed distributed fleet data processing platform handling millions of location updates per minute with sub-second latency.}
-        \resumeItem{Implemented advanced path-finding algorithms incorporating real-time traffic data for optimal route generation.}
+        \resumeItem{Built scalable routing optimization services in Java and C++, reducing delivery planning time by 35\% for enterprise clients.}
+        \resumeItem{Designed distributed spatial database architecture to handle terabytes of geospatial data with sub-second query times.}
+        \resumeItem{Created visualization tools for complex logistics networks using JavaScript and WebGL, enabling data-driven decisions.}
       \resumeItemListEnd
     
     \resumeSubheading
         {Atolio}{May. 2022 -- Jan. 2023}
-      {Software Engineer, Maps & Navigation}{San Francisco, CA}
+      {Software Engineer, Location Services}{San Francisco, CA}
       \resumeItemListStart
-        \resumeItem{Built robust navigation backend services in Python and Java for turn-by-turn guidance in complex urban environments.}
-        \resumeItem{Designed efficient geospatial data processing pipeline that improved map rendering performance by 70\% on mobile devices.}
-        \resumeItem{Created algorithmic solutions for integrating and processing OpenStreetMap data for high-precision navigation systems.}
+        \resumeItem{Developed core location tracking and mapping services in Python and Java for enterprise logistics applications.}
+        \resumeItem{Implemented efficient geofencing algorithms that reduced CPU usage by 40\% while maintaining accuracy at scale.}
+        \resumeItem{Created data pipelines for processing and integrating OpenStreetMap data into proprietary mapping systems.}
       \resumeItemListEnd
     
     \resumeSubheading
         {MVS Systems}{Jun. -- Aug. 2021}
-      {Software Engineer, Maps & Location Services}{Toronto, ON} 
+      {Software Engineer, Mapping Technologies}{Toronto, ON} 
       \resumeItemListStart
-        \resumeItem{Developed backend APIs in Java and Golang to serve real-time location data and routing information to client applications.}
-        \resumeItem{Built high-performance spatial indexing algorithms that improved location-based query performance by 60\%.}
-        \resumeItem{Created comprehensive testing framework for validating navigation accuracy across diverse geographical environments.}
+        \resumeItem{Built RESTful APIs in Java and SQL to serve location-based analytics and mapping services to client applications.}
+        \resumeItem{Developed efficient algorithms for spatial data processing that improved map rendering performance by 30\%.}
+        \resumeItem{Created automated testing infrastructure for map data integrity and routing accuracy across multiple platforms.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -230,13 +230,13 @@
   {\href{https://apps.apple.com/ca/app/resume-builder-ai-cv-maker/id6463698204?platform=iphone}{\faLink}
   % \hspace{3pt}\href{https://apps.apple.com/ca/app/resume-builder-ai-cv-maker/id6463698204?platform=iphone}{\faApple}
   \hspace{0.5pt}
-  \textbf{Advanced Navigation System} $|$ \emph{C++, Python, Golang, OpenStreetMap, PostgreSQL/PostGIS, AWS, Docker}}{}
+  \textbf{Advanced Navigation System} $|$ \emph{C++, Java, WebGL, OpenStreetMap, PostgreSQL/PostGIS, Docker}}{}
   \resumeItemListStart
-    \resumeItem {Engineered a high-performance navigation platform with fleet data analysis for predictive routing and traffic estimation.}
-    \resumeItem {Implemented distributed spatial indexing algorithms that improved point-of-interest search performance by 75\% at scale.}
-    \resumeItem {Developed vector tile rendering pipeline that reduced map data transfer by 65\% while maintaining visual fidelity.}
-    \resumeItem {Created efficient route optimization algorithms accounting for traffic patterns, ETA prediction, and road conditions.}
-    \resumeItem {Built a scalable backend architecture capable of handling millions of concurrent location queries with sub-10ms latency.}
+    \resumeItem {Designed a high-performance navigation platform with real-time traffic integration and predictive routing.}
+    \resumeItem {Implemented custom quadtree spatial indexing that improved point-of-interest search performance by 75\%.}
+    \resumeItem {Developed vector tile rendering pipeline that reduced map data transfer by 65\% while maintaining visual quality.}
+    \resumeItem {Created efficient route optimization algorithms accounting for traffic patterns, weather conditions, and road closures.}
+    \resumeItem {Built a spatial database architecture capable of handling millions of concurrent location queries with sub-10ms latency.}
 
     \vspace{-13pt}
   \resumeItemListEnd
@@ -244,12 +244,12 @@
 \resumeProjectHeading
   {\href{https://drive.google.com/file/d/1uOlu_Y2957nIkzlAQWT-5PlczictrROY/view?usp=sharing}{\faLink}
   \hspace{0.5pt}
-  \textbf{Autonomous Navigation Platform} $|$ \emph{C++, Python, Java, Golang, OpenStreetMap API, AWS, Kubernetes}}{}
+  \textbf{3D Mapping Platform} $|$ \emph{C++, Python, WebGL, Three.js, GLSL, OpenStreetMap API, Mapbox}}{}
   \resumeItemListStart
-   \resumeItem{Developed a comprehensive navigation engine with turn-by-turn guidance and autonomous routing capabilities.}
-    \resumeItem{Implemented high-performance path planning algorithms in C++ and Golang for complex navigation scenarios at scale.}
-    \resumeItem{Designed distributed backend services to process terabytes of fleet data for improved routing decisions.}
-    \resumeItem{Created an intuitive API for third-party developers to integrate advanced navigation capabilities into their applications.}
+   \resumeItem{Developed a comprehensive 3D mapping engine with dynamic building rendering and terrain visualization.}
+    \resumeItem{Implemented efficient level-of-detail algorithms in C++, enabling smooth rendering on devices with varying capabilities.}
+    \resumeItem{Designed a custom spatial database schema optimized for 3D geometry storage and rapid querying of complex structures.}
+    \resumeItem{Created an intuitive API for third-party developers to integrate 3D mapping capabilities into their applications.}
         \vspace{-13pt}
   \resumeItemListEnd
     
