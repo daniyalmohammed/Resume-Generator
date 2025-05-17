@@ -1,0 +1,282 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.25in,top=1.25in,right=0.5in,bottom=0.6in]{geometry} 
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{lato}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+\usepackage{xcolor}
+\definecolor{bookColor}{rgb}{0.15, 0.15, 0.15}
+\color{bookColor}
+
+\definecolor{blacklight}{rgb}{0.15, 0.15, 0.15}
+
+\newcommand\boldblack[1]{\textcolor{black}{\textbf{#1}}}
+\newcommand\boldblacklight[1]{\textcolor{blacklight}{\textbf{#1}}}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-0.2in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.9in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+\definecolor{bittersweet}{rgb}{1, 0.6, 0}
+\definecolor{lavendermagenta}{rgb}{0.93, 0.51, 0.93}
+\definecolor{duolingo}{rgb}{0.207843137, 0.57254902, 0.870588235}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \boldblack{#1} & \boldblack{\small #2} \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingA}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \boldblack{#1} & \boldblack{\small #2}
+    \end{tabular*}\vspace{0pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \boldblack{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{Jal Desai}} \\[10pt]
+    \href{https://jal2003.github.io/}{\faGlobe\ \texttt{jal2003.github.io}} \hspace{10pt} |
+    \href{mailto:j9desai@uwaterloo.ca}{\faEnvelope\ \texttt{j9desai@uwaterloo.ca}} \hspace{10pt} |
+    \href{https://www.linkedin.com/in/jal-desai/}{\faLinkedin\ \texttt{linkedin.com/in/jal-desai}} \hspace{10pt} |
+    \href{https://github.com/jal2003}{\faGithub\ \texttt{github.com/jal2003}} \\[5pt]
+\end{center}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+    \small{\item{
+       {\textbf{Languages}}{: Python, Go, Java, C, C++ Ruby, JavaScript, TypeScript, HTML, CSS, SQL } \\
+     {\textbf{Frameworks/Libraries}}{: Ruby on Rails, Redux, Material UI, GraphQL, Node.js, React } \\
+     {\textbf{Infrastructure}}{: AWS (Lambda, S3, DynamoDB), Kubernetes, Git, Docker, PostgreSQL, Redis, Jenkins} \\
+    }}
+ \end{itemize}
+  \vspace{-15pt}
+
+
+
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+\vspace{2pt}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+    {{HubSpot}}
+    {May 2025 -- August 2025}
+    {{Software Engineer Intern}}{Boston, MA}
+    \resumeItemListStart
+          \resumeItem{Developing customer platform infrastructure with \textbf{Java}, \textbf{DropWizard} and \textbf{Kafka} to streamline CRM workflows for \textbf{200,000+} businesses and enhance engagement with millions of customers worldwide }
+
+    \resumeItemListEnd
+
+\resumeSubheading
+    {{1851 Labs}}
+    {Sept 2024 -- Dec 2024}
+    {{Software Engineer Intern}}{Toronto, ON}
+    \resumeItemListStart
+        \resumeItem{Built login and channels pages for a B2C AI art platform with \textbf{TypeScript}, \textbf{React}, \textbf{Next.js}, and \textbf{AWS}, serving \textbf{10,000} DAUs}
+          \resumeItem{Engineered and A/B tested onboarding features using \textbf{Convex} and \textbf{Material UI}, enabling fast iterations and \textbf{10x} user growth}
+              \resumeItem{Refactored AI model inference and image generation services using, \textbf{Flask}, and \textbf{AWS Lambda}, improving system
+capacity by \textbf{10\%} and reducing latency during peak image creation periods}
+         
+    \resumeItemListEnd
+
+\resumeSubheading
+    {{Regional Municipality of York}}
+    {Jan 2024 -- Apr 2024}
+    {{Software Engineer Intern}}{Newmarket, ON}
+          \resumeItemListStart
+          \resumeItem{Spearheaded a microservices-based internal platform tool for\textbf{ 2,000+} employees using \textbf{Python}, \textbf{FastAPI}, and
+\textbf{React}, managing, organizing and monitoring 300+ third-party applications, improving operational efficiency by \textbf{30\%}}
+      
+
+      \resumeItem{Structured and normalized data schemas in \textbf{PostgreSQL} to enforce data integrity and simplify downstream integrations}
+      \resumeItem{Implemented a \textbf{CI/CD} pipeline using \textbf{GitHub Actions}, automating deployment processes through \textbf{30\%}}
+    \resumeItemListEnd
+
+\resumeSubheading
+    {{DOZR}}
+    {May 2023 -- Aug 2023}
+    {{Software Engineer Intern}}{Kitchener, ON}
+    \resumeItemListStart
+         \resumeItem{Spearheaded a rental system with \textbf{Django, TypeScript, and AWS}, increasing construction equipment bookings by \textbf{50\%}.}
+      \resumeItem{Optimized database queries using \textbf{PostgreSQL indexing and Redis}, reducing execution time from \textbf{2.1s to 400ms}.}
+      \resumeItem{ Automated\textbf{ CI/CD} with \textbf{GitHub Actions} and \textbf{Kubernetes}, cutting deployment time from \textbf{30 to 5 minutes}.}
+    \resumeItemListEnd
+
+\resumeSubheading
+    {{Avolta}}
+    {Sep 2022 -- Apr 2023}
+    {{Software Engineer Intern}}{Toronto, ON}
+    \resumeItemListStart
+            \resumeItem{Built a \textbf{React Native} mobile app to show vehicle location data using \textbf{GCP} for notifications, getting \textbf{95\%} user engagement}
+      \resumeItem{Integrated third-party \textbf{RESTful} APIs with \textbf{Flask}, reducing request latency by \textbf{60\%} and enabling \textbf{2M+ transactions/month}.}
+  \resumeItem{Developed a \textbf{React dashboard} for monitoring vehicle status, streamlining user interactions and reducing UI latency by \textbf{50\%}.}
+
+    \resumeItemListEnd
+
+
+      \resumeSubheading
+       {\textbf{Waterloop - Design Team} }{May 2022 {--} Aug 2022}
+      {{{Software Engineering Team Lead}}}{Waterloo, ON}
+     \resumeItemListStart
+        \resumeItem{Led the development of an internal applicant tracking system for \textbf{550+ applicants} using \textbf{Ruby on Rails} and integrated \textbf{1Password} for secure credential management, improving access control and reducing unauthorized access incidents by \textbf{40\%}.  
+
+
+
+
+
+
+} 
+ 
+      \resumeItemListEnd
+
+    
+ \resumeSubheading
+       {{Manulife - Waterloo Experience Accelerate} }{May 2022 {--} Aug 2022}
+      {{{ Software Engineering Team Lead}}}{Waterloo, ON}
+     \resumeItemListStart
+        \resumeItem{Led a team of \textbf{4} student developers to revamp a tutoring website’s UI using \textbf{React.js} and built a payment system with early bird and bundle discounts using \textbf{Stripe} and \textbf{Express.js}, delivering a fully functional prototype in \textbf{3} months}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+      
+    \resumeProjectHeading
+          { {{\href{https://github.com/jal2003/InformaGenie}{\textbf{InformaGenie}} {\faGithub}}} $|$ \emph{Python, Ollama, LangChain, Streamlit, RAG, LLM}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a secure AI-powered web scraper agent using \textbf{Python, LangChain, and RAG} serving \textbf{50+ users}}
+                \vspace{-15pt}
+
+          \resumeItemListEnd
+          
+    \resumeProjectHeading
+          { {{\href{https://github.com/jal2003/InvisiCut}{\textbf{InvisiCut}} {\faGithub}}} $|$ \emph{Python, Streamlit, rembg, PIL}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a free web-based tool that uses AI to remove image backgrounds instantly for \textbf{200+} users }
+                \vspace{-5pt}
+          \resumeItemListEnd
+
+
+      \resumeSubHeadingListEnd
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Sep. 2021 -- Apr. 2026}
+      {Candidate for Bachelor of Mathematics, Computational Mathematics}{Waterloo, ON}
+    \resumeItemListStart
+        \resumeItem{\textbf{Coursework}: Algorithms, Data Structures, Database Systems, Cloud Computing, Object-Oriented, Distributed Systems}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\end{document}
+
